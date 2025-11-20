@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  @keyframes gummy-btn-hover {
+    40% {
+      transform: scale(1.05);
+      border-radius: 10px;
+    }
+    70% {
+      transform: scale(1.05);
+      border-radius: 16px;
+    }
+    100% {
+      transform: scale(1.05);
+      border-radius: 10px;
+    }
+  }
+  
+  @keyframes gummy-btn-press {
+    75% {
+      transform: scale(0.85);
+      border-radius: 32px;
+    }
+    100% {
+      transform: scale(0.9);
+      border-radius: 20px;
+    }
+  }
+  
+  html {
+    font-size: 20px;
+    font-family: "Sour Gummy", sans-serif;
+  }
+  
+  body button {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background-color: rgb(234, 206, 206);
+    color: black;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: lightgray;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .sidenav button:hover {
+    color: #f1f1f1;
+  }
+  
+  button {
+    position: relative;
+    padding: 8px;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    margin-left: 1%;
+    background-color: #4f5;
+    color: #000;
+    border: 3px solid #0a0;
+    border-radius: 16px;
+    font-family: inherit;
+    font-weight: 700;
+    transition: all linear 0.2s;
+  }
+  button:hover {
+    transform: scale(1.05);
+    border-radius: 10px;
+    animation: 0.5s linear gummy-btn-hover;
+    cursor: pointer;
+  }
+  button:active {
+    transform: scale(0.9);
+    border-radius: 20px;
+    animation: 0.2s linear gummy-btn-press;
+  }
+  
+  button:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    width: 70%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.792);
+    border-radius: 8px;
+  }
+  
+  .gummy-strawberry {
+    background-color: #fad;
+    border-color: #d7b;
+  }
+  
+  #main {
+    transition: margin-left 0.5s;
+    padding: 20px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+  h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 0%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.gallery-item {
+  position: relative;
+  display: inline-block;
+  max-width: 400px;
+}
+
+.gallery-item img{
+  opacity: 1;
+  height: 100%;
+  width: 400px;
+  display: block;
+  border-radius: 10px;
+  transition: transform .5s ease;
+  backface-visibility: hidden;
+}
+
+.gallery-item img:hover {
+  box-shadow: 0 0 32px #333;
+  transform: scale(1.05);
+}
+
+.content {
+  transition: .5s ease;
+  opacity: 0;
+  background-color: pink;
+  color: #000;
+  font-size: 16px;
+  padding: 16px 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gallery-item:hover img {
+  opacity: 0.3;
+}
+
+.gallery-item:hover .content {
+  opacity: 1;
+}
